@@ -45,7 +45,24 @@ public class MainActivity extends AppCompatActivity {
         tv = findViewById(R.id.textview);
 //        getNewsByRetrofit();
 //        getNewsByRetrofitOkhttp();
-        getNewsByRetrofitOkhttpRxjava();
+//        getNewsByRetrofitOkhttpRxjava();
+        a();
+    }
+
+    private void a() {
+        b();
+    }
+
+    private void b() {
+        StringBuffer sb = new StringBuffer();
+        StackTraceElement[] stack = Thread.currentThread().getStackTrace();//通过当前的线程，拿到当前调用的栈帧集合可以理解为当我们调用方法的时候，每进入一个方法，会将该方法的相关信息（例如：类名，方法名，方法调用行数等）存储下来，
+        // 压入到一个栈中，当方法返回的时候再将其出栈。
+        for (StackTraceElement e : stack) {
+            sb.append("\tat ");
+            sb.append(e.toString());
+            sb.append("\n");
+        }
+        Log.e("tag",sb.toString());
     }
 
     /**
