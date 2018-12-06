@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="windowActionModeOverlay">true</item>
-        <item name="windowActionBar">true</item>
-        <item name="windowNoTitle">true</item>
-        <item name="colorPrimary">@color/primary_default</item>
-        <item name="colorPrimaryDark">@color/primary_dark</item>
-        <item name="colorAccent">@color/primary_accent</item>
-        <!--<item name="colorControlNormal">@color/white</item>-->
-        <!-- For selection -->
-        <item name="selectableItemBackground">@drawable/selector_item_light</item>
-        <item name="primaryTextSelector">@drawable/primary_text_selector_light</item>
-        <item name="selectableButtonbg">@drawable/selector_button_light</item>
-    </style>
+    <!--<style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+        <!--<item name="windowActionModeOverlay">true</item>-->
+        <!--<item name="windowActionBar">true</item>-->
+        <!--<item name="windowNoTitle">true</item>-->
+        <!--<item name="colorPrimary">@color/primary_default</item>-->
+        <!--<item name="colorPrimaryDark">@color/primary_dark</item>-->
+        <!--<item name="colorAccent">@color/primary_accent</item>-->
+        <!--&lt;!&ndash;<item name="colorControlNormal">@color/white</item>&ndash;&gt;-->
+        <!--&lt;!&ndash; For selection &ndash;&gt;-->
+        <!--<item name="selectableItemBackground">@drawable/selector_item_light</item>-->
+        <!--<item name="primaryTextSelector">@drawable/primary_text_selector_light</item>-->
+        <!--<item name="selectableButtonbg">@drawable/selector_button_light</item>-->
+    <!--</style>-->
 
-    <!-- Application theme.全屏主题结束 -->
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    <!--&lt;!&ndash; Application theme.全屏主题结束 &ndash;&gt;-->
+    <!--<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">-->
 
-    </style>
+    <!--</style>-->
 
-    <!-- ToolBar菜单样式 -->
-    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
-        <item name="actionMenuTextColor">@android:color/white</item> <!--  敲定颜色-->
-        <item name="android:textSize">18sp</item> <!--  搞掂字体大小-->
-    </style>
-    <!--Application theme. -->
+    <!--&lt;!&ndash; ToolBar菜单样式 &ndash;&gt;-->
+    <!--<style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">-->
+        <!--<item name="actionMenuTextColor">@android:color/white</item> &lt;!&ndash;  敲定颜色&ndash;&gt;-->
+        <!--<item name="android:textSize">18sp</item> &lt;!&ndash;  搞掂字体大小&ndash;&gt;-->
+    <!--</style>-->
+    <!--&lt;!&ndash;Application theme. &ndash;&gt;-->
 
-    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <!--&lt;!&ndash; All customizations that are NOT specific to a particular API-level can go here. &ndash;&gt;-->
+    <!--<style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />-->
 
-    <!-- Application theme. -->
+    <!--&lt;!&ndash; Application theme. &ndash;&gt;-->
 
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-    </style>
+    <!--<style name="AppTheme" parent="AppBaseTheme">-->
+        <!--&lt;!&ndash; All customizations that are NOT specific to a particular API-level can go here. &ndash;&gt;-->
+    <!--</style>-->
 
-    <!--修改menu字体颜色 大小及toolbar的颜色;-->
-    <style name="AppTheme.ActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="actionMenuTextColor">@android:color/white</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:background">@color/primary_default</item>
-    </style>
+    <!--&lt;!&ndash;修改menu字体颜色 大小及toolbar的颜色;&ndash;&gt;-->
+    <!--<style name="AppTheme.ActionBar" parent="Theme.AppCompat.Light.DarkActionBar">-->
+        <!--<item name="actionMenuTextColor">@android:color/white</item>-->
+        <!--<item name="android:textSize">16sp</item>-->
+        <!--<item name="android:background">@color/primary_default</item>-->
+    <!--</style>-->
 
     <!-- 自定义loading dialog -->
     <style name="loading_dialog" parent="android:style/Theme.Dialog">

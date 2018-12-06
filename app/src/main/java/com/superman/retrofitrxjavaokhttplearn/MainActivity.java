@@ -6,10 +6,15 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.superman.com.retrofitrxjavaokhttp_learn.R;
+import com.superman.retrofit.common.BasicObservar;
+import com.superman.retrofit.utils.RxUtil;
+import com.superman.retrofit.utils.ToastUtils;
+import com.superman.retrofitrxjavaokhttplearn.beans.Info;
 import com.superman.retrofitrxjavaokhttplearn.beans.News;
 import com.superman.retrofitrxjavaokhttplearn.interceptor.MyIntercept;
 import com.superman.retrofitrxjavaokhttplearn.interfaces.NewsService;
 import com.superman.retrofitrxjavaokhttplearn.interfaces.RxNewsService;
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
@@ -34,7 +39,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends RxAppCompatActivity {
     public static final String BASE_URL = "http://v.juhe.cn/";
     private TextView tv;
 
@@ -46,9 +51,31 @@ public class MainActivity extends AppCompatActivity {
 //        getNewsByRetrofit();
 //        getNewsByRetrofitOkhttp();
 //        getNewsByRetrofitOkhttpRxjava();
-        a();
+//        a();
+        requestData();
     }
 
+    private void requestData() {
+        RetrofitHelper.getApiService()
+                .getInfo()
+                .compose(RxUtil.<Info>rxSchedulerHelper(this))
+                .subscribe(new BasicObservar<Info>() {
+                    @Override
+                    public void onSuccess(Info info) {
+
+                        tv.setText(info.getTech().get(0).getTitle());
+                    }
+
+                    @Override
+                    public void onFail(String msg) {
+                        ToastUtils.show(msg);
+                    }
+                });
+    }
+
+    /*
+     *获取类名行数
+     */
     private void a() {
         b();
     }
@@ -62,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             sb.append(e.toString());
             sb.append("\n");
         }
-        Log.e("tag",sb.toString());
+        Log.e("tag", sb.toString());
     }
 
     /**

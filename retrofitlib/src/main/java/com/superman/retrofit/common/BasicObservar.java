@@ -18,6 +18,7 @@ import java.net.UnknownHostException;
 import java.text.ParseException;
 
 import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
 import retrofit2.HttpException;
 
 import static com.superman.retrofit.common.BasicObservar.ExceptionReason.BAD_NETWORK;
@@ -48,6 +49,14 @@ public abstract class BasicObservar<T> implements Observer<T> {
        onFinish();
     }
 
+    @Override
+    public void onSubscribe(Disposable d) {
+
+    }
+
+    @Override
+    public void onComplete() {
+    }
 
     @Override
     public void onError(Throwable e) {
@@ -104,13 +113,13 @@ public abstract class BasicObservar<T> implements Observer<T> {
      * 服务器返回数据
      * @param t
      */
-    abstract void onSuccess(T t);
+    public abstract void onSuccess(T t);
 
     /**
      * 服务器返回错误码code之类的，可根据具体接口的规范
      * @param msg
      */
-    abstract void onFail(String msg);
+    public abstract void onFail(String msg);
 
     /**
      * 自定义一些处理
