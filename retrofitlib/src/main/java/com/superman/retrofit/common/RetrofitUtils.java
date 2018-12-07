@@ -43,6 +43,7 @@ public class RetrofitUtils {
                 .addInterceptor(new HttpCacheInterceptor())
                 .addInterceptor(new HttpHeaderInterceptor())
                 .addNetworkInterceptor(new LoggingInterceptor())
+                .cache(cache)
                 ;
     }
 
@@ -53,8 +54,8 @@ public class RetrofitUtils {
         OkHttpClient okHttpClient = getOkhttpBuilder().build();
         return new Retrofit.Builder()
                 .client(okHttpClient)
-        //通过GsonConverterFactory获取真实响应数据
-                .addConverterFactory( GsonConverterFactory.create(gson))//自定义的GsonConverterFactory，用于拦截数据统一处理异常和数据，直接copy的源码
+                //通过GsonConverterFactory获取真实响应数据
+                .addConverterFactory(GsonConverterFactory.create(gson))//自定义的GsonConverterFactory，用于拦截数据统一处理异常和数据，直接copy的源码
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .baseUrl(baseurl);
     }

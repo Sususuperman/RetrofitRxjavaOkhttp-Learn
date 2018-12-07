@@ -30,7 +30,7 @@ public class LoggingInterceptor implements Interceptor {
         //个新的response给应用层处理
         ResponseBody responseBody = response.peekBody(1024 * 1024);
 
-        LogUtils.e(String.format("响应URL-------: %s %n响应数据------%s 请求用时--------%.1fms%n%s",
+        LogUtils.e(String.format("响应URL------- %s %n响应数据------%s 请求用时--------%.1fms%n%s",
                 response.request().url(),
                 responseBody.string(),
                 (t2 - t1) / 1e6d,
